@@ -15,5 +15,5 @@ deno install --allow-net https://raw.githubusercontent.com/amiceli/github-tags-c
 ## Run it
 
 ~~~bash
-deno run --allow-net mod.ts --project=<your-project-id> --token=<your-token> --url=<your-gitlab-url> --limit=<limit:optionnal>
+gitlab-tags-cli --project=<your-project-id> --token=<your-token> --url=<your-gitlab-url> --limit=<limit:optionnal>
 ~~~
