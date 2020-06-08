@@ -1,14 +1,19 @@
 # gitlab-tags-cli
 
-This is just a CLI tool I use in my job to show last tags on a repository with some informations like : 
+This is just a CLI tool to show last tags on a repository with some informations like : 
 - author
 - branch
 - commit message
 - ...
 
-## Run it with installation
+## Installation
+
+~~~bash
+deno install --allow-net https://raw.githubusercontent.com/amiceli/github-tags-cli/master/mod.ts
+~~~
+
+## Run it
 
 ~~~bash
 deno run --allow-net mod.ts --project=<your-project-id> --token=<your-token> --url=<your-gitlab-url> --limit=<limit:optionnal>
 ~~~
-
