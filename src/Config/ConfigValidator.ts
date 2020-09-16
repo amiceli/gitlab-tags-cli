@@ -14,7 +14,7 @@ class ConfigValidator {
     }
 
     public validate () : Config {
-        const { project, token, url, limit } = this.configAsObject
+        const { project, token, url, limit, grep } = this.configAsObject
 
         if (!project) {
             throw new ConfigError('project')
@@ -28,7 +28,7 @@ class ConfigValidator {
             throw new ConfigError('url')
         }
 
-        return new Config(project, token, url, limit)
+        return new Config(project, token, url, limit, grep)
     }
 }
 

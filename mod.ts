@@ -17,11 +17,17 @@ try {
     const api : Readonly<Api> = Api.fromConfig(config)
     const project = await ProjectRepository.fromApi(api).loadProject()
 
-    const tagsApi = TagRepository.fromApi(api)
-    const tagsName = await tagsApi.withProject(project).loadTags()
-    const tags = await Promise.all(tagsName.slice(0, api.Apiconfig.limit).map((name : string) => {
-        return tagsApi.loadTag(name)
-    }))
+    const tagsRepository = TagRepository.fromApi(api)
+    const tagsName = await tagsRepository.withProject(project).loadTags()
+    const tags = await Promise.all(
+        tagsName.slice(0, api.Apiconfig.limit)
+                .filter((tag : string) => {
+                    return config.grep ? tag.includes(config.grep) : true
+                })
+                .map((name : string) => {
+                    return tagsRepository.loadTag(name)
+                })
+    )
 
     const output = Monitoring.get().withProject(project).withTags(tags).display()
 
