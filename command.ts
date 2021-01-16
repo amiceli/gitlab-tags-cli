@@ -4,9 +4,8 @@ import Api from './src/Api/Api.ts'
 import TagRepository from './src/Tag/TagRepository.ts'
 import ProjectRepository from './src/Project/ProjectRepository.ts'
 import Monitoring from './src/UI/Monitoring.ts'
-import { Args } from "https://deno.land/std@0.83.0/flags/mod.ts"
 
-const runCommand = async (commandLineArgs : Args) => {
+const runCommand = async (commandLineArgs : (string | number)[]) => {
     try {
         console.clear()
         

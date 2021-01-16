@@ -4,4 +4,4 @@ import { runCommand } from './command.ts'
 const { args } = Deno
 
 const parsedArgs = parse(args)
-await runCommand(parsedArgs)
+await runCommand(parsedArgs._)
