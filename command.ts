@@ -5,7 +5,7 @@ import TagRepository from './src/Tag/TagRepository.ts'
 import ProjectRepository from './src/Project/ProjectRepository.ts'
 import Monitoring from './src/UI/Monitoring.ts'
 
-const runCommand = async (commandLineArgs : string[]) => {
+const runCommand = async (commandLineArgs : any) => {
     try {
         console.clear()
         
