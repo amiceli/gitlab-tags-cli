@@ -7,8 +7,6 @@ import Monitoring from './src/UI/Monitoring.ts'
 
 const runCommand = async (commandLineArgs : any) => {
     try {
-        console.clear()
-        
         const config = ConfigValidator.fromObject(commandLineArgs).validate()
         const api : Readonly<Api> = Api.fromConfig(config)
         const project = await ProjectRepository.fromApi(api).loadProject()
